@@ -1,0 +1,404 @@
+.page {
+  min-height: 100vh;
+  background: radial-gradient(120% 120% at 50% 0%, #0c1535 0%, #020611 55%, #000 100%);
+  padding: 64px 24px 96px;
+  color: rgba(255, 255, 255, 0.94);
+  font-family: var(--font-geist-sans);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-wrap: balance;
+}
+
+.overline {
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.header h1 {
+  font-size: clamp(2.4rem, 3vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.12;
+}
+
+.lead {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 760px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.panel {
+  background: rgba(8, 12, 30, 0.72);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(90, 122, 255, 0.16);
+  border-radius: 22px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 24px 48px rgba(4, 8, 24, 0.45);
+}
+
+.panel h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.panelLead {
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.5;
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.label {
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.hint {
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.panel input {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(90, 122, 255, 0.28);
+  padding: 12px 14px;
+  background: rgba(2, 8, 26, 0.7);
+  color: #f8f9ff;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.panel input:focus {
+  outline: none;
+  border-color: rgba(130, 162, 255, 0.8);
+  box-shadow: 0 0 0 3px rgba(74, 110, 255, 0.3);
+  background: rgba(2, 14, 42, 0.85);
+}
+
+.inlineGroup {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.secondaryButton {
+  align-self: flex-end;
+  border-radius: 12px;
+  border: 1px solid rgba(90, 122, 255, 0.4);
+  padding: 14px 16px;
+  background: transparent;
+  color: rgba(211, 220, 255, 0.9);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.secondaryButton:disabled {
+  opacity: 0.55;
+  cursor: progress;
+}
+
+.secondaryButton:not(:disabled):hover {
+  background: rgba(90, 122, 255, 0.15);
+  border-color: rgba(120, 152, 255, 0.6);
+}
+
+.error {
+  background: rgba(255, 109, 134, 0.12);
+  border: 1px solid rgba(255, 109, 134, 0.3);
+  color: #ff7a97;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.primaryButton {
+  border: none;
+  border-radius: 12px;
+  padding: 16px 22px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  background: linear-gradient(120deg, #5a7aff, #8d5bff);
+  color: #060b1e;
+  transition: transform 0.18s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 24px rgba(58, 88, 255, 0.35);
+}
+
+.primaryButton:disabled {
+  opacity: 0.7;
+  cursor: progress;
+  box-shadow: none;
+}
+
+.primaryButton:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(90, 122, 255, 0.4);
+}
+
+.resultsPanel {
+  min-height: 640px;
+}
+
+.resultsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.cardGroup {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(25, 35, 78, 0.52);
+  border: 1px solid rgba(84, 110, 255, 0.14);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.84);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.planetList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.planetCard {
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(25, 38, 88, 0.58);
+  border: 1px solid rgba(86, 136, 255, 0.16);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 180px;
+}
+
+.planetCard header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.planetCard h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.planetSign {
+  font-size: 0.85rem;
+  color: rgba(173, 196, 255, 0.86);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.planetPosition {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.planetDetails {
+  font-size: 0.85rem;
+  color: rgba(197, 210, 255, 0.7);
+}
+
+.planetDescription {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: rgba(218, 227, 255, 0.72);
+}
+
+.houseList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  list-style: none;
+}
+
+.houseItem {
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: rgba(26, 36, 84, 0.52);
+  border: 1px solid rgba(74, 110, 255, 0.16);
+  display: flex;
+  gap: 12px;
+}
+
+.houseItem strong {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.houseItem p {
+  font-size: 0.85rem;
+  color: rgba(199, 210, 255, 0.7);
+  line-height: 1.4;
+}
+
+.metaList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: rgba(196, 210, 255, 0.76);
+}
+
+.emptyState {
+  font-size: 0.95rem;
+  color: rgba(180, 195, 245, 0.7);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resultsPanel {
+    order: -1;
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 48px 16px 72px;
+  }
+
+  .panel {
+    padding: 24px;
+  }
+
+  .inlineGroup {
+    flex-direction: column;
+  }
+
+  .secondaryButton {
+    width: 100%;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .page {
+    background: linear-gradient(160deg, #f8faff 0%, #e8edff 45%, #eef2ff 100%);
+    color: #0c1535;
+  }
+
+  .panel {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(45, 70, 200, 0.12);
+    box-shadow: 0 24px 48px rgba(30, 58, 138, 0.1);
+  }
+
+  .panel input {
+    background: rgba(247, 249, 255, 0.85);
+    color: #09112d;
+  }
+
+  .panel input:focus {
+    background: rgba(233, 237, 255, 0.9);
+  }
+
+  .secondaryButton {
+    color: #1d2b6b;
+    border-color: rgba(55, 80, 200, 0.24);
+  }
+
+  .secondaryButton:not(:disabled):hover {
+    background: rgba(55, 80, 200, 0.1);
+  }
+
+  .card,
+  .planetCard,
+  .houseItem {
+    background: rgba(244, 246, 255, 0.78);
+    border-color: rgba(82, 110, 220, 0.12);
+    color: #16204a;
+  }
+
+  .planetDetails,
+  .planetDescription,
+  .houseItem p,
+  .metaList {
+    color: rgba(23, 38, 97, 0.7);
+  }
+
+  .emptyState {
+    color: rgba(23, 38, 97, 0.6);
+  }
+}
